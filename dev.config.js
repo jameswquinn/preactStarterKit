@@ -82,11 +82,7 @@ module.exports = {
       {
         test: /\.(ttf|eot|woff|woff2)$/,
         use: {
-          loader: "file-loader",
-          options: {
-            name: "[name]~[sha512:hash:base64:7].[ext]",
-            outputPath: "fonts"
-          }
+          loader: "file-loader"
         }
       }
     ]
