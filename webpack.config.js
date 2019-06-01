@@ -287,7 +287,7 @@ module.exports = {
     }),
     new WebpackBuildNotifierPlugin({
       title: "My Project Webpack Build",
-      logo: path.resolve("src/icons/assets/icon.png"),
+      logo: path.resolve("public/icons/icon.png"),
       suppressSuccess: true
     }),
     new BundleAnalyzerPlugin({

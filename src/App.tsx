@@ -1,33 +1,24 @@
 import { h } from 'preact';
 import "lazysizes";
-import { format, render, cancel, register } from "timeago.js";
+import * as timeago from "timeago.js";
 
-//import {distanceInWordsToNow} from "date-fns";
+import {distanceInWordsToNow} from "date-fns";
 import {} from "lodash-es";
-// import a plugin
-//import "lazysizes/plugins/parent-fit/ls.parent-fit";
-const responsiveImage = require("./img/three.jpg?min=320,max=1400,steps=6");
 
+const responsiveImage = require("./img/three.jpg?min=320,max=1400,steps=6");
+const responsiveImage2 = require("./img/two.jpg?min=320,max=1400,steps=6");
+const responsiveImage1 = require("./img/one.jpg?min=320,max=1400,steps=6");
 
 export default () => (
   <main>
     <header>Header</header>
 
     <article>
-      <h3 className="title">A title</h3>
+      <h3 className="title">James peek-a-boo - I'm here...A title James. Hay yes you James!!!Hello, over here. Can you see it yet?</h3>
       <div>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero eaque
-        quas ipsa aut laudantium eius, eveniet eligendi ab, veritatis reiciendis
-        aperiam architecto. Expedita, ab, maxime voluptatem assumenda
-        necessitatibus esse quia nemo magnam alias, dolore ex deserunt.
-        Obcaecati, distinctio. Natus, laborum tenetur fugiat totam facilis
-        ratione commodi mollitia quasi nesciunt, vel, vitae doloribus. Maxime
-        vel, dolorem sit soluta quos accusamus dolores, maiores, nulla animi
-        autem doloribus cupiditate eius obcaecati perferendis quibusdam sed
-        delectus dicta ab quidem doloremque eveniet repudiandae eos et.
-        Dignissimos velit, optio numquam iusto quis deleniti debitis ex modi
-        libero autem nulla, atque eveniet doloremque officia consequuntur, eius
-        neque!
+The Great Gatsby by F. Scott Fitzgerald
+
+"Every one suspects himself of at least one of the cardinal virtues, and this is mine: I am one of the few honest people that I have ever known."
       </div>
 
       <img
@@ -37,7 +28,23 @@ export default () => (
         class="lazyload"
         alt=""
       />
-      <p>{format(1559044158103)}</p>
+      <img
+        sizes="(max-width: 1400px) 100vw, 1400px"
+        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1880 1140'%3E%3C/svg%3E"
+        data-srcset={responsiveImage2.srcSet}
+        class="lazyload"
+        alt=""
+      />
+      <img
+        sizes="(max-width: 1400px) 100vw, 1400px"
+        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1880 1140'%3E%3C/svg%3E"
+        data-srcset={responsiveImage1.srcSet}
+        class="lazyload"
+        alt=""
+      />
+      <p>{timeago.format(1559044158103)}</p>
+            <p>{distanceInWordsToNow(new Date(1559346669133))}</p>
+            
     </article>
 
     <footer>Footer</footer>
