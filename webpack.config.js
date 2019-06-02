@@ -6,7 +6,7 @@ const PATHS = {
   src: path.join(__dirname, "src")
 };
 
-
+const WebpackPwaManifest = require("webpack-pwa-manifest");
 /**
  * We've enabled Postcss, autoprefixer and precss for you. This allows your app
  * to lint  CSS, support variables and mixins, transpile future CSS syntax,
@@ -93,7 +93,6 @@ const { GenerateSW } = require("workbox-webpack-plugin");
  */
 
 const CleanWebpackPlugin = require("clean-webpack-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
 const PurgecssPlugin = require("purgecss-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
@@ -249,7 +248,32 @@ module.exports = {
       verbose: true,
       dry: false
     }),
-    new CopyWebpackPlugin([{ from: "icons", to: "." }]),
+    new WebpackPwaManifest({
+      //filename: "manifest.json",
+      name: "My Progressive Web App",
+      short_name: "MyPWA",
+      description: "My awesome Progressive Web App!",
+      background_color: "#000000",
+      orientation: "portrait",
+      display: "standalone",
+      start_url: ".",
+      crossorigin: null,
+      inject: true,
+      fingerprints: false,
+      ios: true,
+      publicPath: null,
+      includeDirectory: true,
+      icons: [
+        {
+          src: path.resolve("public/icons/icon.png"),
+          sizes: [16, 32, 57, 60, 72, 76, 114, 120, 144, 152, 167, 180] // multiple sizes
+        },
+        {
+          src: path.resolve("public/icons/icon.png"),
+          size: "1024x1024" // you can also use the specifications pattern
+        }
+      ]
+    }),
     new HtmlWebpackPlugin({
       title: "My App",
       template: "!!prerender-loader?string!public/index.html",
