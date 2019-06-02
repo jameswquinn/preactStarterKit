@@ -1,8 +1,6 @@
 var favicons = require("gulp-favicons");
 var gulp = require("gulp");
 
-
-
 gulp.task("favicon", function() {
   return gulp
     .src("public/icons/icon.png")
@@ -47,4 +45,4 @@ gulp.task("favicon", function() {
       })
     )
     .pipe(gulp.dest("icons"));
-})
+});

@@ -6,7 +6,7 @@ const PATHS = {
   src: path.join(__dirname, "src")
 };
 
-const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
+
 /**
  * We've enabled Postcss, autoprefixer and precss for you. This allows your app
  * to lint  CSS, support variables and mixins, transpile future CSS syntax,
@@ -93,6 +93,7 @@ const { GenerateSW } = require("workbox-webpack-plugin");
  */
 
 const CleanWebpackPlugin = require("clean-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const PurgecssPlugin = require("purgecss-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
@@ -248,39 +249,7 @@ module.exports = {
       verbose: true,
       dry: false
     }),
-    new FaviconsWebpackPlugin({
-      // Your source logo
-      logo: "./public/icons/icon.png",
-      // The prefix for all image files (might be a folder or a name)
-      prefix: ".",
-      // Emit all stats of the generated icons
-      emitStats: false,
-      // The name of the json containing all favicon information
-      statsFilename: "iconstats-[hash].json",
-      // Generate a cache file with control hashes and
-      // don't rebuild the favicons until those hashes change
-      persistentCache: true,
-      // Inject the html into the html-webpack-plugin
-      inject: true,
-      // favicon background color (see https://github.com/haydenbleasel/favicons#usage)
-      background: "#fff",
-      // favicon app title (see https://github.com/haydenbleasel/favicons#usage)
-      title: "Webpack App",
-
-      // which icons should be generated (see https://github.com/haydenbleasel/favicons#usage)
-      icons: {
-        android: true,
-        appleIcon: true,
-        appleStartup: false,
-        coast: false,
-        favicons: true,
-        firefox: false,
-        opengraph: false,
-        twitter: false,
-        yandex: false,
-        windows: false
-      }
-    }),
+    new CopyWebpackPlugin([{ from: "icons", to: "." }]),
     new HtmlWebpackPlugin({
       title: "My App",
       template: "!!prerender-loader?string!public/index.html",

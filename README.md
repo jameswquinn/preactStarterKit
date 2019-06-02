@@ -1,1 +1,1 @@
-# preactStarterKit
+# safePreactTypescript

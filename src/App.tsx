@@ -2,9 +2,6 @@ import { h } from 'preact';
 import "lazysizes";
 import * as timeago from "timeago.js";
 
-import {distanceInWordsToNow} from "date-fns";
-import {} from "lodash-es";
-
 
 const responsiveImage = require("./img/three.jpg?min=320,max=1400,steps=6");
 const responsiveImage2 = require("./img/two.jpg?min=320,max=1400,steps=6");
@@ -34,6 +31,7 @@ The Great Gatsby by F. Scott Fitzgerald
         class="lazyload"
         alt=""
       />
+      <p>{timeago.format(1559044158103)}</p>
       <img
         sizes="(max-width: 1400px) 100vw, 1400px"
         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1880 1140'%3E%3C/svg%3E"
@@ -41,6 +39,7 @@ The Great Gatsby by F. Scott Fitzgerald
         class="lazyload"
         alt=""
       />
+      <p>{timeago.format(1559044158103)}</p>
       <img
         sizes="(max-width: 1400px) 100vw, 1400px"
         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1880 1140'%3E%3C/svg%3E"
@@ -48,8 +47,8 @@ The Great Gatsby by F. Scott Fitzgerald
         class="lazyload"
         alt=""
       />
-      <p>{timeago.format(1559044158103)}</p>
-            <p>{distanceInWordsToNow(new Date(1559346669133))}</p>
+      <p>{timeago.format(1559475502921)}</p>
+    
             
     </article>
 
