@@ -73,3 +73,7 @@ img.lazyload:not([src]) {
 	opacity: 1;
 	transition: opacity 300ms;
 }
+
+.james {
+  color: bisque;
+}

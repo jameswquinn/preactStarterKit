@@ -1,5 +1,10 @@
 const webpack = require("webpack");
 const path = require("path");
+const glob = require("glob");
+
+const PATHS = {
+  src: path.join(__dirname, "src")
+};
 
 /**
  * We've enabled Postcss, autoprefixer and precss for you. This allows your app
@@ -88,6 +93,7 @@ const { GenerateSW } = require("workbox-webpack-plugin");
 
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const PurgecssPlugin = require("purgecss-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -264,6 +270,9 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "[name]~[contentHash].css"
     }),
+    new PurgecssPlugin({
+      paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true })
+    }),
     new Critters(),
     new OptimizeCssAssetsPlugin(),
     new TerserPlugin({
@@ -300,6 +309,12 @@ module.exports = {
         vendors: {
           priority: -10,
           test: /[\\/]node_modules[\\/]/
+        },
+        styles: {
+          name: "styles",
+          test: /\.css$/,
+          chunks: "all",
+          enforce: true
         }
       },
       chunks: "async",
