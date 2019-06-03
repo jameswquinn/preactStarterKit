@@ -319,7 +319,7 @@ module.exports = {
       description: "My awesome Progressive Web App!",
       background_color: "#000000",
       orientation: "portrait",
-      display: "standalone",
+      display: "fullscreen",
       start_url: ".",
       crossorigin: null,
       inject: false,
