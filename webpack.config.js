@@ -130,12 +130,6 @@ const { GenerateSW } = require("workbox-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 
-/**
- * We've added HtmlWebpackPlugin, MiniCssExtractPlugin,
- * OptimizeCssAssetsPlugin
- * 
- * Core plugins required on typical webpack config.
- */
 
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
