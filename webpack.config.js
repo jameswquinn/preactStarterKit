@@ -318,6 +318,7 @@ module.exports = {
       short_name: "MyPWA",
       description: "My awesome Progressive Web App!",
       background_color: "#000000",
+      theme_color: "#000000",
       orientation: "portrait",
       display: "fullscreen",
       start_url: ".",
