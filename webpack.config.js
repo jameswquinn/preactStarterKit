@@ -1,10 +1,37 @@
 const webpack = require("webpack");
 const path = require("path");
-const glob = require("glob");
 
-const PATHS = {
-  src: path.join(__dirname, "src")
-};
+/**
+ *
+ * We've added WebpackBuildNotifierPlugin plugin. This uses the
+ * node-notifier module to display OS-level notifications for
+ * Webpack build errors and warnings.
+ *
+ * https://github.com/RoccoC/webpack-build-notifier
+ *
+ */
+
+const WebpackBuildNotifierPlugin = require("webpack-build-notifier");
+
+/**
+ *
+ * We.ve added PurgecssPlugin plugin to remove unused css.
+ *
+ * https://github.com/FullHuman/purgecss-webpack-plugin
+ *
+ */
+
+const glob = require("glob");
+const PurgecssPlugin = require("purgecss-webpack-plugin");
+
+/**
+ * webpack-pwa-manifest is a webpack plugin that generates
+ * a 'manifest.json' for your Progressive Web Application, with
+ * auto icon resizing and fingerprinting support.
+ *
+ * https://github.com/arthurbergmz/webpack-pwa-manifest
+ *
+ */
 
 const WebpackPwaManifest = require("webpack-pwa-manifest");
 /**
@@ -92,12 +119,37 @@ const { GenerateSW } = require("workbox-webpack-plugin");
  *
  */
 
+/**
+ *
+ * A webpack plugin to remove/clean your build folder(s).
+ *
+ * https://github.com/johnagan/clean-webpack-plugin
+ *
+ */
+
 const CleanWebpackPlugin = require("clean-webpack-plugin");
-const PurgecssPlugin = require("purgecss-webpack-plugin");
+
+
+/**
+ * We've added HtmlWebpackPlugin, MiniCssExtractPlugin,
+ * OptimizeCssAssetsPlugin
+ * 
+ * Core plugins required on typical webpack config.
+ */
+
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const WebpackBuildNotifierPlugin = require("webpack-build-notifier");
+
+/**
+ * 
+ * We've added BundleAnalyzerPlugin to represent bundle 
+ * content as convenient interactive zoomable treemap
+ * 
+ * https://github.com/webpack-contrib/webpack-bundle-analyzer
+ * 
+ */
+
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
   .BundleAnalyzerPlugin;
 
@@ -248,32 +300,6 @@ module.exports = {
       verbose: true,
       dry: false
     }),
-    new WebpackPwaManifest({
-      //filename: "manifest.json",
-      name: "My Progressive Web App",
-      short_name: "MyPWA",
-      description: "My awesome Progressive Web App!",
-      background_color: "#000000",
-      orientation: "portrait",
-      display: "standalone",
-      start_url: ".",
-      crossorigin: null,
-      inject: true,
-      fingerprints: false,
-      ios: true,
-      publicPath: null,
-      includeDirectory: true,
-      icons: [
-        {
-          src: path.resolve("public/icons/icon.png"),
-          sizes: [16, 32, 57, 60, 72, 76, 114, 120, 144, 152, 167, 180] // multiple sizes
-        },
-        {
-          src: path.resolve("public/icons/icon.png"),
-          size: "1024x1024" // you can also use the specifications pattern
-        }
-      ]
-    }),
     new HtmlWebpackPlugin({
       title: "My App",
       template: "!!prerender-loader?string!public/index.html",
@@ -292,11 +318,37 @@ module.exports = {
         minifyCSS: true
       }
     }),
+    new WebpackPwaManifest({
+      //filename: "manifest.json",
+      name: "My Progressive Web App",
+      short_name: "MyPWA",
+      description: "My awesome Progressive Web App!",
+      background_color: "#000000",
+      orientation: "portrait",
+      display: "standalone",
+      start_url: ".",
+      crossorigin: null,
+      inject: false,
+      fingerprints: false,
+      ios: true,
+      publicPath: null,
+      includeDirectory: true,
+      icons: [
+        {
+          src: path.resolve("public/icons/icon.png"),
+          sizes: [16, 32, 57, 60, 72, 76, 114, 120, 144, 152, 167, 180] // multiple sizes
+        },
+        {
+          src: path.resolve("public/icons/icon.png"),
+          size: "1024x1024" // you can also use the specifications pattern
+        }
+      ]
+    }),
     new MiniCssExtractPlugin({
       filename: "[name]~[contentHash].css"
     }),
     new PurgecssPlugin({
-      paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true })
+      paths: glob.sync(path.join(__dirname, "src/**/*"), { nodir: true })
     }),
     new Critters(),
     new OptimizeCssAssetsPlugin(),
