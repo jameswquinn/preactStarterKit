@@ -1,5 +1,15 @@
 import { h, Component } from "preact";
-import "lazysizes";
+import lazySizes from 'lazysizes';
+// other imports ...
+
+lazySizes.cfg.lazyClass = 'lazy';
+lazySizes.cfg.loadingClass = 'is-loading';
+lazySizes.cfg.loadedClass = 'is-loaded';
+lazySizes.cfg.loadMode = 1;
+lazySizes.cfg.throttleDelay = 100;
+lazySizes.cfg.hFac = 10;
+lazySizes.cfg.init = true;
+
 import * as timeago from "timeago.js";
 const responsiveImage = require("../../img/four.jpg?min=320,max=1400,steps=6");
 const five = require("../../img/Cristina-Hoch-Photography.jpg?min=320,max=1400,steps=6");
@@ -16,8 +26,8 @@ export default class Home extends Component {
             </div>
           </article>
           <img
-            className="lazyload"
-            data-sizes="(max-width: 1400px) 100vw, 1400px"
+            className="lazy"
+            data-sizes="auto"
             src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 650 300'%3E%3C/svg%3E"
             data-srcset={responsiveImage.srcSet}
             alt=""
@@ -34,8 +44,8 @@ We were grateful to catch a glimpse of Cristina’s process with a Behind The Le
             </div>
           </article>
           <img
-            className="lazyload"
-            data-sizes="(max-width: 1400px) 100vw, 1400px"
+            className="lazy"
+            data-sizes="auto"
             src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 650 300'%3E%3C/svg%3E"
             data-srcset={five.srcSet}
             alt=""
