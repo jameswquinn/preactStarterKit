@@ -40,6 +40,22 @@ article {
   hyphens: auto;
 }
 
+h2 {
+  writing-mode: vertical-rl;
+  position: absolute;
+  left: 0rem;
+  top: 3rem;
+  line-height: 0;
+  color: red;
+  font-size: 4rem;
+}
+
+.h1 {
+  writing-mode: vertical-rl;
+  margin: 1.5rem;
+  color: red;
+}
+
 main header {
   text-align: center;
 }
@@ -60,4 +76,22 @@ img[data-sizes="auto"] {
 
 .is-loaded {
   opacity: 1;
+}
+
+.scroll-snap-type {
+  -ms-scroll-snap-type: mandatory;
+  scroll-snap-type: mandatory;
+  -ms-scroll-snap-points-y: repeat(100vw);
+  scroll-snap-points-y: repeat(100vw);
+  -ms-scroll-snap-type: x mandatory;
+  scroll-snap-type: x mandatory;
+  display: flex;
+  overflow-x: scroll;
+}
+
+.scroll-snap-align {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  scroll-snap-align: start;
 }
