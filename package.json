@@ -70,6 +70,7 @@
     "workbox-webpack-plugin": "^4.3.1"
   },
   "dependencies": {
+    "css-scroll-snap-polyfill": "^0.1.2",
     "date-fns": "^1.30.1",
     "lazysizes": "^5.1.0",
     "lit-html": "^1.1.0",

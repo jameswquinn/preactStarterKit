@@ -1,5 +1,5 @@
 import { h, Component } from "preact";
-//import scrollSnapPolyfill from 'css-scroll-snap-polyfill';
+import scrollSnapPolyfill from 'css-scroll-snap-polyfill';
 import lazySizes from "lazysizes";
 
 import * as timeago from "timeago.js";
@@ -22,7 +22,7 @@ lazySizes.cfg.init = true;
 
 export default class Terms extends Component {
     componentDidMount() {
-        //scrollSnapPolyfill()
+        scrollSnapPolyfill()
     }
     componentDidUpdate() { }
     componentWillUnmount() { }
