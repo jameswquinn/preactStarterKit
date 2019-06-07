@@ -1,20 +1,36 @@
 import { h, Component } from "preact";
-import lazySizes from 'lazysizes';
-// other imports ...
-
-lazySizes.cfg.lazyClass = 'lazy';
-lazySizes.cfg.loadingClass = 'is-loading';
-lazySizes.cfg.loadedClass = 'is-loaded';
-lazySizes.cfg.loadMode = 1;
-lazySizes.cfg.throttleDelay = 100;
-lazySizes.cfg.hFac = 10;
-lazySizes.cfg.init = true;
-
 import * as timeago from "timeago.js";
+import lozad from 'lozad';
+
 const responsiveImage = require("../../img/four.jpg?min=320,max=1400,steps=6");
 const five = require("../../img/Cristina-Hoch-Photography.jpg?min=320,max=1400,steps=6");
 export default class Home extends Component {
+  componentDidMount() {
+    lozad('.lazy', {
+      loaded: function (el) {
+        // Custom implementation on a loaded element
+        el.classList.add('is-loaded');
+      },
+      loading: function (el) {
+        // Custom implementation on a loaded element
+        el.classList.remove('is-loading');
+      },
+      rootMargin: '10px 0px', // syntax similar to that of CSS Margin
+      threshold: 0.1 // ratio of element convergence
+    }).observe();
+  }
+
+
+  componentDidUpdate() {
+
+  }
+
+  componentWillUnmount() {
+
+  }
+
   render() {
+    
     return (
       <main>
         <header><h1>Photography</h1></header>
@@ -26,7 +42,7 @@ export default class Home extends Component {
             </div>
           </article>
           <img
-            className="lazy"
+            className="lazy is-loading"
             data-sizes="auto"
             src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 650 300'%3E%3C/svg%3E"
             data-srcset={responsiveImage.srcSet}
@@ -44,7 +60,7 @@ We were grateful to catch a glimpse of Cristina’s process with a Behind The Le
             </div>
           </article>
           <img
-            className="lazy"
+            className="lazy is-loading"
             data-sizes="auto"
             src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 650 300'%3E%3C/svg%3E"
             data-srcset={five.srcSet}
