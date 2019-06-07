@@ -1,7 +1,5 @@
 import { h, Component } from "preact";
-import scrollSnapPolyfill from 'css-scroll-snap-polyfill';
 import lazySizes from "lazysizes";
-
 import * as timeago from "timeago.js";
 
 
@@ -22,10 +20,16 @@ lazySizes.cfg.init = true;
 
 export default class Terms extends Component {
     componentDidMount() {
-        scrollSnapPolyfill()
+
     }
-    componentDidUpdate() { }
-    componentWillUnmount() { }
+
+    componentDidUpdate() {
+
+    }
+
+    componentWillUnmount() {
+
+    }
 
     render() {
         return (
@@ -35,25 +39,25 @@ export default class Terms extends Component {
                 <div class="scroll-snap-type">
 
                     <img
-                        className="lazy scroll-snap-align"
+                        className="lazy"
                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 650 300'%3E%3C/svg%3E"
                         data-srcset={cristina_hoch_fine_art_portraits_photos_12.srcSet}
                         alt=""
                     />
                     <img
-                        className="lazy scroll-snap-align"
+                        className="lazy"
                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 650 300'%3E%3C/svg%3E"
                         data-srcset={cristina_hoch_fine_art_portraits_photos_09.srcSet}
                         alt=""
                     />
                     <img
-                        className="lazy scroll-snap-align"
+                        className="lazy"
                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 650 300'%3E%3C/svg%3E"
                         data-srcset={cristina_hoch_fine_art_portraits_photos_07.srcSet}
                         alt=""
                     />
                     <img
-                        className="lazy scroll-snap-align"
+                        className="lazy"
                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 650 300'%3E%3C/svg%3E"
                         data-srcset={cristina_hoch_fine_art_portraits_photos_06.srcSet}
                         alt=""
