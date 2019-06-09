@@ -33,10 +33,16 @@ img[data-sizes="auto"] {
   width: 100%;
 }
 
+<<<<<<< HEAD
 .vertical-rl {
   -webkit-writing-mode: vertical-rl;
   -ms-writing-mode: tb-rl;
   writing-mode: vertical-rl;
+=======
+.is-loading {
+  opacity: 0;
+  transition: opacity 800ms;
+>>>>>>> parent of d4ccec4... update
 }
 
 .set_aspect__ratio::before {

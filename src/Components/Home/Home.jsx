@@ -1,11 +1,26 @@
 import { h, Component } from "preact";
+<<<<<<< HEAD
 
 import * as timeago from "timeago.js";
 import lozad from 'lozad';
+=======
+import lazySizes from 'lazysizes';
+// other imports ...
 
+lazySizes.cfg.lazyClass = 'lazy';
+lazySizes.cfg.loadingClass = 'is-loading';
+lazySizes.cfg.loadedClass = 'is-loaded';
+lazySizes.cfg.loadMode = 1;
+lazySizes.cfg.throttleDelay = 100;
+lazySizes.cfg.hFac = 10;
+lazySizes.cfg.init = true;
+>>>>>>> parent of d4ccec4... update
+
+import * as timeago from "timeago.js";
 const responsiveImage = require("../../img/four.jpg?min=320,max=1400,steps=6");
 const five = require("../../img/Cristina-Hoch-Photography.jpg?min=320,max=1400,steps=6");
 export default class Home extends Component {
+<<<<<<< HEAD
   componentDidMount() {
     lozad('.lazy', {
       loaded: function (el) {
@@ -26,8 +41,9 @@ export default class Home extends Component {
 
   }
 
+=======
+>>>>>>> parent of d4ccec4... update
   render() {
-    
     return (
       <div>
         <section className="container">
