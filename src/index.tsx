@@ -8,7 +8,6 @@ import Terms from "./Components/Terms/Terms.jsx"
 
 
 const App = () => (
-    <div>
     <header>
         <nav>
             <a href="/">Home</a>
@@ -20,9 +19,8 @@ const App = () => (
         <Terms path="/terms" />
     </Router>
     </header>
-    </div>
 );
 
 /** our index route */
 
-render(<App />, document.body, document.body.querySelector('main'));
+render(<App />, document.body, document.body.querySelector('header'));
