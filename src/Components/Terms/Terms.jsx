@@ -2,10 +2,10 @@ import { h, Component } from "preact";
 import * as timeago from "timeago.js";
 import lozad from "lozad";
 
-const cristina_hoch_fine_art_portraits_photos_12 = require("../../img/cristina_hoch_fine_art_portraits_photos_12.jpg?size=640");
-const cristina_hoch_fine_art_portraits_photos_09 = require("../../img/cristina_hoch_fine_art_portraits_photos_09.jpg?size=640");
-const cristina_hoch_fine_art_portraits_photos_07 = require("../../img/cristina_hoch_fine_art_portraits_photos_07.jpg?size=640");
-const cristina_hoch_fine_art_portraits_photos_06 = require("../../img/cristina_hoch_fine_art_portraits_photos_06.jpg?size=640");
+const cristina_hoch_fine_art_portraits_photos_12 = require("../../img/cristina_hoch_fine_art_portraits_photos_12.jpg?min=320,max=1400,steps=6");
+const cristina_hoch_fine_art_portraits_photos_09 = require("../../img/cristina_hoch_fine_art_portraits_photos_09.jpg?min=320,max=1400,steps=6");
+const cristina_hoch_fine_art_portraits_photos_07 = require("../../img/cristina_hoch_fine_art_portraits_photos_07.jpg?min=320,max=1400,steps=6");
+const cristina_hoch_fine_art_portraits_photos_06 = require("../../img/cristina_hoch_fine_art_portraits_photos_06.jpg?min=320,max=1400,steps=6");
 
 export default class Terms extends Component {
   componentDidMount() {
@@ -22,45 +22,57 @@ export default class Terms extends Component {
 
   componentDidUpdate() {}
 
-  componentWillUnmount() {}
+  componentWillUnmount() {
+    observer.unobserve();
+  }
 
   render() {
     return (
       <div>
-        <div className="vertical-rl red">{timeago.format(1559850556669)}</div>
-        <div class="scroll-snap-type">
-          <span class="aspectRatioSizer set_aspect__ratio">
-            <span
-              class="lazy bg_img"
-              data-background-image={
-                cristina_hoch_fine_art_portraits_photos_12.src
+        <div className="vertical-rl red">
+          {timeago.format(1560280680905)}
+        </div>
+        <div className="scroll-snap-type">
+          <div className="aspectRatioSizer set_aspect__ratio">
+            <img
+              className="lazy"
+              src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+              data-srcset={
+                cristina_hoch_fine_art_portraits_photos_12.srcSet
               }
+              alt=""
             />
-          </span>
-          <span class="aspectRatioSizer set_aspect__ratio">
-            <span
-              class="lazy bg_img"
-              data-background-image={
-                cristina_hoch_fine_art_portraits_photos_09.src
+          </div>
+          <div className="aspectRatioSizer set_aspect__ratio">
+            <img
+              className="lazy"
+              src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+              data-srcset={
+                cristina_hoch_fine_art_portraits_photos_09.srcSet
               }
+              alt=""
             />
-          </span>
-          <span class=" aspectRatioSizer set_aspect__ratio">
-            <span
-              class="lazy bg_img"
-              data-background-image={
-                cristina_hoch_fine_art_portraits_photos_07.src
+          </div>
+          <div className="aspectRatioSizer set_aspect__ratio">
+            <img
+              className="lazy"
+              src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+              data-srcset={
+                cristina_hoch_fine_art_portraits_photos_07.srcSet
               }
+              alt=""
             />
-          </span>
-          <span class=" aspectRatioSizer set_aspect__ratio">
-            <span
-              class="lazy bg_img"
-              data-background-image={
-                cristina_hoch_fine_art_portraits_photos_06.src
+          </div>
+          <div className="aspectRatioSizer set_aspect__ratio">
+            <img
+              className="lazy"
+              src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+              data-srcset={
+                cristina_hoch_fine_art_portraits_photos_06.srcSet
               }
+              alt=""
             />
-          </span>
+          </div>
         </div>
         <blockquote cite="https://www.goodreads.com/author/show/3565.Oscar_Wilde">
           <h1>
