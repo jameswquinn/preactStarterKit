@@ -33,7 +33,7 @@ export default class Terms extends Component {
           {timeago.format(1560280680905)}
         </div>
         <div className="scroll-snap-type">
-          <div className="aspectRatioSizer set_aspect__ratio">
+          <div className="aspectRatioSizer set_1x1">
             <img
               className="lazy"
               src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
@@ -43,7 +43,7 @@ export default class Terms extends Component {
               alt=""
             />
           </div>
-          <div className="aspectRatioSizer set_aspect__ratio">
+          <div className="aspectRatioSizer set_1x1">
             <img
               className="lazy"
               src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
@@ -53,7 +53,7 @@ export default class Terms extends Component {
               alt=""
             />
           </div>
-          <div className="aspectRatioSizer set_aspect__ratio">
+          <div className="aspectRatioSizer set_1x1">
             <img
               className="lazy"
               src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
@@ -63,7 +63,7 @@ export default class Terms extends Component {
               alt=""
             />
           </div>
-          <div className="aspectRatioSizer set_aspect__ratio">
+          <div className="aspectRatioSizer set_1x1">
             <img
               className="lazy"
               src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
@@ -71,6 +71,14 @@ export default class Terms extends Component {
                 cristina_hoch_fine_art_portraits_photos_06.srcSet
               }
               alt=""
+            />
+          </div>
+          <div className="aspectRatioSizer set_1x1">
+            <span
+              class="lazy"
+              data-background-image={
+                cristina_hoch_fine_art_portraits_photos_06.src
+              }
             />
           </div>
         </div>

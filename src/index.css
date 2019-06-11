@@ -34,8 +34,32 @@ body {
   writing-mode: vertical-rl;
 }
 
-.set_aspect__ratio::before {
-  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3C/svg%3E");
+.set_16x9::before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E");
+}
+
+.set_7x5::before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 7 5'%3E%3C/svg%3E");
+}
+
+.set_3x2::before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E");
+}
+
+.set_9x16::before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 16'%3E%3C/svg%3E");
+}
+
+.set_5x7::before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 5 7'%3E%3C/svg%3E");
+}
+
+.set_2x3::before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2 3'%3E%3C/svg%3E");
+}
+
+.set_1x1::before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E");
 }
 
 .aspectRatioSizer {
@@ -43,6 +67,10 @@ body {
   background-color: black;
 }
 
+.aspectRatioSizer::before,
+.aspectRatioSizer > *:not(img) {
+  grid-area: 1 / 1 / -1 / -1;
+}
 
 .aspectRatioSizer::before,
 .aspectRatioSizer > img {
@@ -61,7 +89,8 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
-.scroll-snap-type img {
+.scroll-snap-type img,
+.scroll-snap-type span {
   width: 100vw;
   scroll-snap-align: start;
 }
@@ -72,7 +101,13 @@ img[data-sizes="auto"] {
 }
 
 img.lazy:not([srcset]) {
-	visibility: hidden;
+  visibility: hidden;
+}
+
+span.lazy {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .lazy {
@@ -118,9 +153,15 @@ b,
 strong {
   font-weight: bold;
 }
-p {margin-bottom: 1.25em;}
+p {
+  margin-bottom: 1.25em;
+}
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   margin: 2.75rem 0 1rem;
   font-weight: 100;
   line-height: 1.15;
@@ -133,15 +174,26 @@ h1 {
   font-size: 2.488em;
 }
 
-h2 {font-size: 2.074em;}
+h2 {
+  font-size: 2.074em;
+}
 
-h3 {font-size: 1.728em;}
+h3 {
+  font-size: 1.728em;
+}
 
-h4 {font-size: 1.44em;}
+h4 {
+  font-size: 1.44em;
+}
 
-h5 {font-size: 1.2em;}
+h5 {
+  font-size: 1.2em;
+}
 
-small, .text_small {font-size: 0.833em;}
+small,
+.text_small {
+  font-size: 0.833em;
+}
 ::-webkit-scrollbar {
   display: none;
 }
