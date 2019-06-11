@@ -71,6 +71,10 @@ img[data-sizes="auto"] {
   width: 100%;
 }
 
+img.lazy:not([srcset]) {
+	visibility: hidden;
+}
+
 .lazy {
   opacity: 0;
   transition: opacity 300ms;
@@ -121,6 +125,7 @@ h1, h2, h3, h4, h5 {
   font-weight: 100;
   line-height: 1.15;
   hyphens: none;
+  font-weight: bolder;
 }
 
 h1 {
