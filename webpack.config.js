@@ -129,19 +129,19 @@ const { GenerateSW } = require("workbox-webpack-plugin");
 
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 
-
+const DirectoryTreePlugin = require("directory-tree-webpack-plugin");
 
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 /**
- * 
- * We've added BundleAnalyzerPlugin to represent bundle 
+ *
+ * We've added BundleAnalyzerPlugin to represent bundle
  * content as convenient interactive zoomable treemap
- * 
+ *
  * https://github.com/webpack-contrib/webpack-bundle-analyzer
- * 
+ *
  */
 
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
@@ -293,6 +293,11 @@ module.exports = {
     new CleanWebpackPlugin({
       verbose: true,
       dry: false
+    }),
+    new DirectoryTreePlugin({
+      dir: "./src/img",
+      path: "./src/_content.json",
+      extensions: /\.(jpe?g|png)$/i
     }),
     new HtmlWebpackPlugin({
       title: "My App",
