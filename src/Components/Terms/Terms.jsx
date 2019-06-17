@@ -28,7 +28,7 @@ export default class Terms extends Component {
 
   render() {
     return (
-      <div>
+      <div className="fade-in">
         <div className="vertical-rl red">
           {timeago.format(1560280680905)}
         </div>
@@ -90,6 +90,7 @@ export default class Terms extends Component {
             <cite>Oscar Wilde</cite>
           </footer>
         </blockquote>
+        <div className="spacer" />
       </div>
     );
   }

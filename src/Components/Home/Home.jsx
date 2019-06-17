@@ -23,7 +23,7 @@ export default class Home extends Component {
 
   render() {
     return (
-      <div>
+      <div className="fade-in">
         <section className="container">
           <article>
             <h1>Photography</h1>
@@ -31,9 +31,9 @@ export default class Home extends Component {
             <div>
               Portraits are one of the most powerful kinds of photographs. A
               great portrait can last for decades, memorializing a person’s
-              entire life, or just a single instant. The difference between a
-              snapshot and a good portrait is more narrow than you’d think. It
-              just requires a little bit of thought.
+              entire life, or just a single instant. The difference between
+              a snapshot and a good portrait is more narrow than you’d
+              think. It just requires a little bit of thought.
             </div>
           </article>
           <img
@@ -46,19 +46,20 @@ export default class Home extends Component {
           <p>{timeago.format(1559572217016)}</p>
           <article>
             <h3 className="title">
-              Interview: Biologist Discovers Intense Moments of Beauty Hidden in
-              Small Details
+              Interview: Biologist Discovers Intense Moments of Beauty
+              Hidden in Small Details
             </h3>
             <div>
-              Aspiring biologist Cristina Hoch has a love for the natural world
-              that runs deep within her dark and emotive images. Be it the way
-              light falls on a subject or the universe of freckles on a face,
-              Cristina’s ability to pair small life moments with intense human
-              emotion leaves you feeling a connection to the vulnerability of
-              each subject. Her unique style of pairing strong shadows with bold
-              contrast lends to a powerful experience for her audience. We were
-              grateful to catch a glimpse of Cristina’s process with a Behind
-              The Lens look into her outdoor portrait photography!
+              Aspiring biologist Cristina Hoch has a love for the natural
+              world that runs deep within her dark and emotive images. Be it
+              the way light falls on a subject or the universe of freckles
+              on a face, Cristina’s ability to pair small life moments with
+              intense human emotion leaves you feeling a connection to the
+              vulnerability of each subject. Her unique style of pairing
+              strong shadows with bold contrast lends to a powerful
+              experience for her audience. We were grateful to catch a
+              glimpse of Cristina’s process with a Behind The Lens look into
+              her outdoor portrait photography!
             </div>
           </article>
           <img

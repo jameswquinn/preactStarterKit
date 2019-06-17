@@ -16,7 +16,7 @@
   },
   "scripts": {
     "build": "webpack",
-    "start": "webpack-dev-server --config dev.config.js --port 4444 --open"
+    "start": "webpack-dev-server --config dev.config.js --port 5444 --open"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",

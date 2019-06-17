@@ -294,11 +294,6 @@ module.exports = {
       verbose: true,
       dry: false
     }),
-    new DirectoryTreePlugin({
-      dir: "./src/img",
-      path: "./src/_content.json",
-      extensions: /\.(jpe?g|png)$/i
-    }),
     new HtmlWebpackPlugin({
       title: "My App",
       template: "!!prerender-loader?string!public/index.html",
