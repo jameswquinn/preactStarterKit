@@ -231,8 +231,8 @@ small,
 
 .navigation svg {
   display: block;
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   background-color: transparent;
   fill: inherit;
 }
@@ -243,30 +243,16 @@ small,
   justify-content: space-evenly;
   align-items: center;
   width: 100vw;
-  height: 60px;
+  height: 54px;
   background-color: black;
   position: fixed;
   bottom: 0;
+  will-change: transform;
+  transition: transform 400ms;
 }
 
-/* Slide transitions */
-.header__pinned {
-  transition: all 400ms;
+/* Navbar Component */
+.navigation.is__pinned {
   -webkit-transform: translateY(100%);
   transform: translateY(100%);
-}
-
-.header__unpinned {
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
-}
-
-.header__pinned,
-.header__unpinned {
-  transition: all 400ms;
-}
-
-
-.bgset {
-  fill: red;
 }

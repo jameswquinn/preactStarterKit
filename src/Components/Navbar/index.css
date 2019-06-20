@@ -1,11 +1,38 @@
-.navbar {
-  width: 100%;
-  padding: 10px;
-  position: fixed;
-  top: 0;
-  transition: top 0.6s;
+a {
+  fill:white;
+}
+.navigation svg {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  fill: inherit;
 }
 
-.navbar--hidden {
-  top: -50px;
+.navigation {
+  z-index: 100;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100vw;
+  height: 60px;
+  background-color: black;
+  position: fixed;
+  bottom: 0;
+}
+
+/* Navbar Component */
+.is__pinned {
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+}
+
+.is__unpinned {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.is__pinned,
+.is__unpinned {
+  transition: all 400ms;
 }
