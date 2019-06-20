@@ -251,6 +251,7 @@ small,
 
 /* Slide transitions */
 .header__pinned {
+  transition: all 400ms;
   -webkit-transform: translateY(100%);
   transform: translateY(100%);
 }
@@ -263,4 +264,9 @@ small,
 .header__pinned,
 .header__unpinned {
   transition: all 400ms;
+}
+
+
+.bgset {
+  fill: red;
 }

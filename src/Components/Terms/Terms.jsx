@@ -29,17 +29,13 @@ export default class Terms extends Component {
   render() {
     return (
       <div className="fade-in">
-        <div className="vertical-rl red">
-          {timeago.format(1560280680905)}
-        </div>
+        <div className="vertical-rl red">{timeago.format(1560280680905)}</div>
         <div className="scroll-snap-type">
           <div className="aspectRatioSizer set_1x1">
             <img
               className="lazy"
               src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-              data-srcset={
-                cristina_hoch_fine_art_portraits_photos_12.srcSet
-              }
+              data-srcset={cristina_hoch_fine_art_portraits_photos_12.srcSet}
               alt=""
             />
           </div>
@@ -47,9 +43,7 @@ export default class Terms extends Component {
             <img
               className="lazy"
               src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-              data-srcset={
-                cristina_hoch_fine_art_portraits_photos_09.srcSet
-              }
+              data-srcset={cristina_hoch_fine_art_portraits_photos_09.srcSet}
               alt=""
             />
           </div>
@@ -57,9 +51,7 @@ export default class Terms extends Component {
             <img
               className="lazy"
               src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-              data-srcset={
-                cristina_hoch_fine_art_portraits_photos_07.srcSet
-              }
+              data-srcset={cristina_hoch_fine_art_portraits_photos_07.srcSet}
               alt=""
             />
           </div>
@@ -67,9 +59,7 @@ export default class Terms extends Component {
             <img
               className="lazy"
               src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-              data-srcset={
-                cristina_hoch_fine_art_portraits_photos_06.srcSet
-              }
+              data-srcset={cristina_hoch_fine_art_portraits_photos_06.srcSet}
               alt=""
             />
           </div>
