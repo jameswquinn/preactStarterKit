@@ -1,33 +1,4 @@
-import { h, Component } from "preact";
-import "./index.css";
-let new_scroll_position = 0;
-
-export default class Navbar extends Component {
-
-  componentDidMount() {
-    window.addEventListener("scroll", this.handleScroll);
-  }
-  componentDidUpdate() { }
-  componentWillUnmount() {
-    window.removeEventListener("scroll", this.handleScroll);
-  }
-
-  handleScroll = () => {
-    const NAV_NODE = document.querySelector("#APP_NAV");
-    let last_scroll_position = window.scrollY;
-    if (new_scroll_position < last_scroll_position && last_scroll_position > 50) {
-      NAV_NODE.classList.add("is__pinned");
-      new_scroll_position = window.scrollY;
-    } else if (new_scroll_position > last_scroll_position) {
-      NAV_NODE.classList.remove("is__pinned");
-    }
-    new_scroll_position = last_scroll_position;
-  };
-
-  render() {
-    return (
-      <div>
-        <svg
+ <svg
           aria-hidden="true"
           style="position: absolute; width: 0; height: 0; overflow: hidden;"
           version="1.1"
@@ -49,30 +20,3 @@ export default class Navbar extends Component {
             </symbol>
           </defs>
         </svg>
-
-        <nav id="APP_NAV" className="navigation">
-          <a href="/">
-            <svg>
-              <use xlinkHref="#icon-home" />
-            </svg>
-          </a>
-          <a href="/terms">
-            <svg>
-              <use xlinkHref="#icon-bubble" />
-            </svg>
-          </a>
-          <a href="/about">
-            <svg>
-              <use xlinkHref="#icon-location" />
-            </svg>
-          </a>
-          <a href="/more">
-            <svg>
-              <use xlinkHref="#icon-navigation-more" />
-            </svg>
-          </a>
-        </nav>
-      </div>
-    );
-  }
-}

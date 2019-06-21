@@ -23,7 +23,7 @@ export default class Terms extends Component {
   componentDidUpdate() {}
 
   componentWillUnmount() {
-    observer.unobserve();
+
   }
 
   render() {
@@ -72,7 +72,7 @@ export default class Terms extends Component {
             />
           </div>
         </div>
-        <blockquote cite="https://www.goodreads.com/author/show/3565.Oscar_Wilde">
+        <blockquote>
           <h1>
             <q>Be yourself; everyone else is already taken</q>
           </h1>

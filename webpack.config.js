@@ -219,6 +219,7 @@ module.exports = {
             options: {
               plugins: [
                 "syntax-dynamic-import",
+                "@babel/plugin-syntax-dynamic-import",
                 "@babel/plugin-proposal-class-properties",
                 { loose: true }
               ],
@@ -305,7 +306,6 @@ module.exports = {
       dry: false
     }),
     new HtmlWebpackPlugin({
-      title: "My App",
       template: "!!prerender-loader?string!public/index.html",
       meta: {
         description: "Description website",

@@ -1,10 +1,11 @@
 a {
   fill:white;
 }
+
 .navigation svg {
   display: block;
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   background-color: transparent;
   fill: inherit;
 }
@@ -15,24 +16,16 @@ a {
   justify-content: space-evenly;
   align-items: center;
   width: 100vw;
-  height: 60px;
+  height: 54px;
   background-color: black;
   position: fixed;
   bottom: 0;
+  will-change: transform;
+  transition: transform 400ms;
 }
 
 /* Navbar Component */
-.is__pinned {
+.navigation.is__pinned {
   -webkit-transform: translateY(100%);
   transform: translateY(100%);
-}
-
-.is__unpinned {
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
-}
-
-.is__pinned,
-.is__unpinned {
-  transition: all 400ms;
 }
