@@ -35,19 +35,23 @@ module.exports = {
           }
         ]
       },
-      {
+     {
         test: /\.jsx?$/,
         use: [
           {
             loader: "babel-loader",
             options: {
-              plugins: ["syntax-dynamic-import"],
-
               presets: [
                 [
                   "@babel/preset-env",
                   {
-                    modules: false
+                    modules: false,
+                    targets: [
+                      "last 1 version",
+                      "> 1%",
+                      "maintained node versions",
+                      "not dead"
+                    ]
                   }
                 ]
               ],

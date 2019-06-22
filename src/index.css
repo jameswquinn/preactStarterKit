@@ -140,6 +140,10 @@ a {
   text-transform: uppercase;
 }
 
+a.active {
+  fill: snow;
+}
+
 b,
 strong {
   font-weight: bold;

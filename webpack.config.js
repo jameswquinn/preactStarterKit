@@ -185,7 +185,7 @@ module.exports = {
           {
             loader: "postcss-loader",
             options: {
-              plugins: function() {
+              plugins: function () {
                 return [precss, autoprefixer];
               },
               sourceMap: false
@@ -217,13 +217,6 @@ module.exports = {
           {
             loader: "babel-loader",
             options: {
-              plugins: [
-                "syntax-dynamic-import",
-                "@babel/plugin-syntax-dynamic-import",
-                "@babel/plugin-proposal-class-properties",
-                { loose: true }
-              ],
-
               presets: [
                 [
                   "@babel/preset-env",
@@ -306,6 +299,7 @@ module.exports = {
       dry: false
     }),
     new HtmlWebpackPlugin({
+
       template: "!!prerender-loader?string!public/index.html",
       meta: {
         description: "Description website",
