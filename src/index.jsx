@@ -5,7 +5,7 @@ import "./index.css";
 
 import Home from "./Components/Home/Home";
 import Terms from "./Components/Terms/Terms";
-const NODE = document.body.querySelector("main");
+const NODE = document.body.querySelector("#root");
 let new_scroll_position = 0;
 
 class Navbar extends Component {
@@ -34,7 +34,7 @@ class Navbar extends Component {
 
   render() {
     return (
-      <div>
+      <header>
         <nav id="APP_NAV" className="navigation">
           <a href="/" aria-label="Read more about..">
             <svg id="icon-home" viewBox="0 0 32 32">
@@ -58,25 +58,25 @@ class Navbar extends Component {
             </svg>
           </a>
         </nav>
-      </div>
+      </header>
     );
   }
 }
 
 const App = () => (
-  <main>
+  <div id="root">
     <Navbar />
     <Router>
       <Home path="/" />
       <Terms path="/terms" />
       <Error type="404" default />
     </Router>
-  </main>
+  </div>
 );
 
 /** fall-back route (handles unroutable URLs) */
 const Error = ({ type, url }) => (
-  <section class="error">
+  <main className="error">
     <h2>Error {type}</h2>
     <p>It looks like we hit a snag.</p>
     <pre>{url}</pre>
@@ -86,7 +86,7 @@ const Error = ({ type, url }) => (
         <path d="M32 19l-6-6v-9h-4v5l-6-6-16 16v1h4v10h10v-6h4v6h10v-10h4z" />
       </svg>
     </a>
-  </section>
+  </main>
 );
 
 render(<App />, document.body, NODE);

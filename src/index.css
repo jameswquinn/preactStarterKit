@@ -204,7 +204,7 @@ small,
   margin-bottom: 4.5rem;
 }
 
-.fade-in {
+main {
   -webkit-animation: fade-in 0.4s cubic-bezier(0.47, 0, 0.745, 0.715) 40ms both;
   animation: fade-in 0.4s cubic-bezier(0.47, 0, 0.745, 0.715) 40ms both;
 }

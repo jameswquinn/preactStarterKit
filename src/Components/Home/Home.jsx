@@ -1,4 +1,5 @@
 import { h, Component } from "preact";
+import Helmet from "preact-helmet";
 
 import * as timeago from "timeago.js";
 import lozad from "lozad";
@@ -24,7 +25,8 @@ export default class Home extends Component {
 
   render() {
     return (
-      <div className="fade-in">
+      <main>
+        <Helmet title="My Title Hay James" />
         <img
           className="lazy"
           data-sizes="auto"
@@ -32,7 +34,7 @@ export default class Home extends Component {
           data-srcset={responsiveImage.srcSet}
           alt=""
         />
-        <main class="container">
+        <article class="container">
           <h1>Hold on to your butts</h1>
           <p>
             The path of the righteous man is beset on all sides by the
@@ -84,9 +86,9 @@ export default class Home extends Component {
             And you must think you're in a toy store, because you're here
             shopping for an infant named Jeb.{" "}
           </p>
-        </main>
-        <section className="container">
-          <article>
+        </article >
+  
+          <article className="container">
             <h1>Photography</h1>
             <h3>How to Take a Good Portrait Photo</h3>
             <div>
@@ -131,10 +133,10 @@ export default class Home extends Component {
             alt=""
           />
           <p>{timeago.format(1560105136789)}</p>
-        </section>
+    
 
         <footer>Footer</footer>
-      </div>
+      </main>
     );
   }
 }

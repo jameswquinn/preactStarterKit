@@ -1,4 +1,6 @@
 import { h, Component } from "preact";
+import Helmet from "preact-helmet";
+
 import * as timeago from "timeago.js";
 import lozad from "lozad";
 
@@ -28,7 +30,8 @@ export default class Terms extends Component {
 
   render() {
     return (
-      <div className="fade-in">
+      <main>
+        <Helmet title="My Title Hay James Yet Another Page" />
         <div className="vertical-rl red">{timeago.format(1560280680905)}</div>
         <div className="scroll-snap-type">
           <div className="aspectRatioSizer set_1x1">
@@ -81,7 +84,7 @@ export default class Terms extends Component {
           </footer>
         </blockquote>
         <div className="spacer" />
-      </div>
+      </main>
     );
   }
 }
