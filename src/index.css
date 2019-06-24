@@ -260,3 +260,9 @@ main {
   -webkit-transform: translateY(100%);
   transform: translateY(100%);
 }
+
+.video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}

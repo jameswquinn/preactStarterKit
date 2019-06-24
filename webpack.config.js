@@ -185,7 +185,7 @@ module.exports = {
           {
             loader: "postcss-loader",
             options: {
-              plugins: function () {
+              plugins: function() {
                 return [precss, autoprefixer];
               },
               sourceMap: false
@@ -290,6 +290,10 @@ module.exports = {
             outputPath: "fonts"
           }
         }
+      },
+      {
+        test: /\.mp4$/,
+        use: "file-loader?name=videos/[name].[ext]"
       }
     ]
   },
@@ -299,7 +303,6 @@ module.exports = {
       dry: false
     }),
     new HtmlWebpackPlugin({
-
       template: "!!prerender-loader?string!public/index.html",
       meta: {
         description: "Description website",

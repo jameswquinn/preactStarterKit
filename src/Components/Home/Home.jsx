@@ -17,16 +17,23 @@ export default class Home extends Component {
       rootMargin: "10px 0px", // syntax similar to that of CSS Margin
       threshold: 0.4 // ratio of element convergence
     }).observe();
+
+    document.getElementById("intro").play(); 
   }
 
-  componentDidUpdate() {}
+  componentDidUpdate() {
+ 
+  }
 
-  componentWillUnmount() {}
+  componentWillUnmount() {
+    document.getElementById("intro").pause();
+  }
 
   render() {
     return (
       <main>
         <Helmet title="My Title Hay James" />
+        <video id="intro" className="video"loop muted playsInline src={require("../../video/intro.mp4")}></video>
         <img
           className="lazy"
           data-sizes="auto"
