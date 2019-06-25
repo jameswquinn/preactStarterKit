@@ -37,7 +37,6 @@ class Navbar extends Component {
 
   render() {
     return (
-      <header>
         <nav id="APP_NAV" className="navigation">
           <Link activeClassName="active" href="/" aria-label="Read more about..">
             <svg id="icon-home" viewBox="0 0 32 32">
@@ -60,7 +59,6 @@ class Navbar extends Component {
             </svg>
           </Link>
         </nav>
-      </header>
     );
   }
 }
